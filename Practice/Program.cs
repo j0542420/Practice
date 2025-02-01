@@ -10,25 +10,26 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            //declarations
-
-            //input
+            // Declarations
             int age = 0;
             double money = 0;
 
-            //asking for input age
+            // Asking for input: age
             Console.WriteLine("What is your age?");
-
-            //read age
+            // Read age
             age = Convert.ToInt32(Console.ReadLine());
 
-            //asking for input money
+            // Asking for input: money
             Console.WriteLine("How much do you have?");
-
-            //read money
+            // Read money
             money = Convert.ToDouble(Console.ReadLine());
 
-            if (age >= 21)
+            // Check if the user is old enough and has enough money for beer
+            bool isOlder = age >= 21;
+            bool isYounger = age < 21;
+
+            // Check if the user is old enough for beer and has enough money
+            if (isOlder)
             {
                 if (money > 10)
                 {
@@ -36,35 +37,33 @@ namespace Practice
                 }
                 else
                 {
-                    Console.WriteLine("You dont have enough money");
+                    Console.WriteLine("You don't have enough money.");
                 }
-
             }
             else
             {
-                Console.WriteLine("Your are not qualified");
+                Console.WriteLine("You are not qualified.");
             }
 
-
-            if (age >= 21 && money >= 10)
+            // Simplified version using the same condition
+            if (isOlder && money >= 10)
             {
-                Console.WriteLine("Yes here is your beer");
+                Console.WriteLine("Yes, here is your beer.");
             }
-            else 
+            else
             {
-                Console.WriteLine("We can not sell you beer!");
+                Console.WriteLine("We cannot sell you beer!");
             }
-            //
-            bool isOlder =  ;
-            bool isYounger = ;
 
-
-
-
-
-
-
-
+            // Display whether the user is older or younger than 21
+            if (isOlder)
+            {
+                Console.WriteLine("You are older than 21.");
+            }
+            else
+            {
+                Console.WriteLine("You are younger than 21.");
+            }
         }
     }
 }
